@@ -1,0 +1,44 @@
+.wrapper {
+  background-color: #428bca;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+
+  header {
+    margin-bottom: 20px;
+
+    img {
+      max-width: 120px;
+    }
+  }
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  width: 50%;
+}
+
+ .panel {
+   transition: max-height 0.5s cubic-bezier(.525,.66,.495,1.4);
+   border-bottom: lightgray 1px solid;
+   padding: 20px 0;
+
+   &:last-child {
+     border-bottom: none;
+   }
+   .panel-collapse {
+     max-height: 0;
+     overflow: hidden;
+     transition: max-height 1s cubic-bezier(.525,.66,.495,1.4);
+   }
+   &.is-expanded {
+     .panel-collapse {
+       max-height: 200px
+     }
+   }
+ }
