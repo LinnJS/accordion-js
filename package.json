@@ -2,7 +2,9 @@
   "name": "accordion-js",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://linnjs.github.io/accordion-js/",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.9.4",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -11,6 +13,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
