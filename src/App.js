@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import logo from "./assets/logo.svg";
 import "./styles/App.scss";
 import Accordion from "./components/Accordion";
 
 export default class App extends Component {
   render() {
+    const { users } = this.props;
     return (
       <div className="wrapper">
         <header>
@@ -12,20 +14,22 @@ export default class App extends Component {
           <h1>Accordion.js</h1>
         </header>
         <div className="container">
-          <Accordion title="Overview">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. 3 wolf moon officia aute.
-          </Accordion>
-          <Accordion title="Features">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. 3 wolf moon officia aute.
-          </Accordion>
-          <Accordion title="Reviews">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. 3 wolf moon officia aute.
-          </Accordion>
+          {users.map(user => {
+            return (
+              <Accordion
+                key={user.id}
+                title={user.name}
+                bio={user.bio}
+                photo={user.profile_pic_url}
+              />
+            );
+          })}
         </div>
       </div>
     );
   }
 }
+
+App.propTypes = {
+  users: PropTypes.array
+};

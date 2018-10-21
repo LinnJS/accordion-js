@@ -18,7 +18,7 @@ class Accordion extends Component {
   }
 
   render() {
-    const { title, children } = this.props;
+    const { title, bio, photo } = this.props;
 
     return (
       <div
@@ -27,9 +27,10 @@ class Accordion extends Component {
       >
         <div className="panel-heading">
           <h2>{title}</h2>
+          <img src={photo} alt="User Photos" />
         </div>
         <div className="panel-collapse">
-          <div className="panel-body">{children}</div>
+          <div className="panel-body">{bio}</div>
         </div>
       </div>
     );
@@ -40,5 +41,6 @@ export default Accordion;
 
 Accordion.propTypes = {
   title: PropTypes.string,
-  children: PropTypes.string
+  bio: PropTypes.string,
+  photo: PropTypes.string
 };

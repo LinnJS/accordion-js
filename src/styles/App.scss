@@ -2,12 +2,11 @@
   background-color: #428bca;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   height: 100vh;
 
   header {
-    margin-bottom: 20px;
+    margin: 40px 0;
 
     img {
       max-width: 120px;
@@ -23,6 +22,8 @@
   width: 50%;
 }
 
+
+
  .panel {
    transition: max-height 0.5s cubic-bezier(.525,.66,.495,1.4);
    border-bottom: lightgray 1px solid;
@@ -31,6 +32,23 @@
    &:last-child {
      border-bottom: none;
    }
+
+   .panel-heading{
+     flex-direction: row;
+     display: flex;
+     width: 25%;
+     justify-content: space-between;
+     margin-bottom: 20px;
+     align-items: center;
+
+     img {
+       height: 80px;
+       width: 80px;
+       border-radius: 50px;
+       overflow: hidden;
+     }
+   }
+
    .panel-collapse {
      max-height: 0;
      overflow: hidden;
